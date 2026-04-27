@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import FamilyTree from "./FamilyTree";
 
 function MainPage() {
   return (
@@ -7,7 +8,6 @@ function MainPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-
       {/* 🎵 Background Music */}
       <audio autoPlay loop>
         <source src="/Music.mp3" type="audio/mpeg" />
@@ -23,18 +23,13 @@ function MainPage() {
           animate={{ y: 0, opacity: 1 }}
         />
 
-        <h2 className="text-3xl font-bold">
-          Hello! Welcome to Our Family 👋
-        </h2>
+        <h2 className="text-3xl font-bold">Hello! Welcome to Our Family 👋</h2>
 
-        <p className="text-gray-600 mt-2">
-          I'm your virtual guide ✨
-        </p>
+        <p className="text-gray-600 mt-2">I'm your virtual guide ✨</p>
       </div>
 
       {/* Sections */}
       <div className="mt-10 space-y-16">
-
         {/* About */}
         <section>
           <h2 className="text-2xl font-semibold">About Us</h2>
@@ -46,9 +41,7 @@ function MainPage() {
         {/* Members */}
         <section>
           <h2 className="text-2xl font-semibold">Family Members</h2>
-          <p className="text-gray-600 mt-2">
-            Father, Mother, and Me 😄
-          </p>
+          <p className="text-gray-600 mt-2">Father, Mother, and Me 😄</p>
         </section>
 
         {/* Gallery */}
@@ -59,6 +52,12 @@ function MainPage() {
           </p>
         </section>
 
+        <section className="mt-20">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Our Family Tree 🌳
+          </h2>
+          <FamilyTree />
+        </section>
       </div>
     </motion.div>
   );

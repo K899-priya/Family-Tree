@@ -6,7 +6,7 @@ const familyTree = {
   img: "/gf.jpg",
   spouse: {
     name: "Grandmother",
-    img: "/gm.jpg",
+    img: "/P2133336.jpg",
   },
   children: [
     {
@@ -28,7 +28,7 @@ const familyTree = {
       name: "Son 3",
       spouse: { name: "Wife 3", img: "/w3.jpg" },
       children: [
-        { name: "Child 4", img: "/c4.jpg" },
+        { name: "Child 4", img: "/P2122568.jpg" },
       ],
     },
   ],

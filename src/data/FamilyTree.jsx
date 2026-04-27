@@ -1,4 +1,4 @@
-// data/familyTree.js
+
 
 const familyTree = {
   name: "Grandfather",

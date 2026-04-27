@@ -10,8 +10,9 @@ function TreeNode({ person, onClick }) {
         src={person.img}
         alt={person.name}
         className="w-20 h-20 rounded-full border-4 border-white shadow-lg"
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300 }}
+        whileTap={{ scale: 0.9 }}
       />
 
       {/* Hover Overlay */}

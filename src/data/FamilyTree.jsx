@@ -3,32 +3,35 @@
 const familyTree = {
   name: "Grandfather",
   role: "Head",
-  img: "/gf.jpg",
+  img: "/gf.JPG",
   spouse: {
     name: "Grandmother",
-    img: "/P2133336.jpg",
+    img: "/P2133336.JPG",
   },
   children: [
     {
-      name: "Son 1",
-      spouse: { name: "Wife 1", img: "/w1.jpg" },
+      name: "Kamla Kant Singh", img: "/s1.jpeg",
+      spouse: { name: "Ramita Devi", img: "/w1.jpeg" },
       children: [
-        { name: "Child 1", img: "/c1.jpg" },
-        { name: "Child 2", img: "/c2.jpg" },
+        { name: "Kumari Preeti", img: "/c1.jpeg" },
+        { name: "Kumari Priya", img: "/c2.jpeg" },
+        { name: "Kumari Khushboo", img: "/c3.JPG" },
       ],
     },
     {
-      name: "Son 2",
-      spouse: { name: "Wife 2", img: "/w2.jpg" },
+      name: "Bimal Knat Singh", img: "/s2.jpeg",
+      spouse: { name: "Anita Devi", img: "/w2.JPG" },
       children: [
-        { name: "Child 3", img: "/c3.jpg" },
+        { name: "Kumar Gaurav", img: "/c4.jpeg" },
+        { name: "Avinav Kumar", img: "/c2.JPG" },
       ],
     },
     {
-      name: "Son 3",
-      spouse: { name: "Wife 3", img: "/w3.jpg" },
+      name: "Mithilesh Kant Singh", img: "/s3.jpeg",
+      spouse: { name: "Sarita Devi", img: "/w3.JPG" },
       children: [
-        { name: "Child 4", img: "/P2122568.jpg" },
+        { name: "Amit Kumar", img: "/P2122568.JPG" },
+        { name: "Shiwani Kumari", img: "/c7.JPG" },
       ],
     },
   ],

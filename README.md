@@ -1,16 +1,170 @@
-# React + Vite
+# 🌳 Family Tree Website 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic, interactive family website built with **React + Tailwind CSS + Framer Motion**.
+This project showcases a modern UI with animations, storytelling, and interactive components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### 🎬 Cinematic Welcome Screen
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Animated gradient background 🌌
+* Floating particles ✨
+* Anime character entry 🤖
+* Click ripple transition 💥
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🏠 Main Page
+
+* Smooth scroll animations
+* Glassmorphism UI design 💎
+* Background music 🎵
+* Responsive layout
+
+---
+
+### 🧬 About Section (Storytelling)
+
+* Typewriter animated story ✍️
+* Interactive memory cards 🔄
+* Timeline of family journey 🎞
+
+---
+
+### 🧬 Memory Cards
+
+* 3D flip animation
+* Click → opens mini gallery 📸
+* Smooth transitions + glow effects
+
+---
+
+### 📸 Gallery
+
+* Grid layout
+* Fullscreen viewer
+* Swipe navigation (mobile) 📱
+* Zoom (pinch + scroll) 🔍
+
+---
+
+### 🌳 Family Tree
+
+* Structured family hierarchy
+* Clickable members
+* Modal with details
+* SVG connecting lines
+
+---
+
+### 📍 Footer
+
+* Location info
+* Contact details
+* Glass UI design
+
+---
+
+## 🛠 Tech Stack
+
+* ⚛️ React (Vite)
+* 🎨 Tailwind CSS
+* 🎞 Framer Motion
+* 📱 React Swipeable
+* 🔍 React Zoom Pan Pinch
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── WelcomeScreen.jsx
+│   ├── MainPage.jsx
+│   ├── FamilyTree.jsx
+│   ├── TreeNode.jsx
+│   ├── Gallery.jsx
+│   ├── MemoryCards.jsx
+│   ├── Timeline.jsx
+│   ├── Footer.jsx
+│
+├── data/
+│   ├── FamilyTree.js
+│   ├── galleryData.js
+│
+├── App.jsx
+├── main.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/K899-priya/family-tree.git
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the project
+
+```bash
+npm run dev
+```
+
+---
+
+## 📂 Public Assets
+
+Place your assets in the `public/` folder:
+
+```
+public/
+ ├── anime.png
+ ├── Music.mp3
+ ├── gallery/
+       |── g1.jpg, g2.jpg, ...
+```
+
+---
+
+## 🎯 Highlights
+
+* 🎬 Cinematic UI experience
+* 📱 Mobile-friendly interactions
+* 🧠 Interactive storytelling design
+* 💎 Modern glassmorphism styling
+
+---
+
+## 🚀 Future Improvements
+
+* 🔐 User authentication
+* ☁️ Cloud image uploa
+* 🎤 Voice narration
+* 🌳 Dynamic tree layout (drag + zoom)
+
+---
+
+## 👩‍💻 Author
+
+**Priya**
+Frontend Developer 💻✨
+
+---
+
+## ❤️ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+---

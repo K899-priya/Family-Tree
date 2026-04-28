@@ -5,6 +5,7 @@ import MemoryCards from "./MemoryCards";
 import Timeline from "./Timeline";
 import FamilyTree from "./FamilyTree";
 import Gallery from "./Gallery";
+import Footer from "./Footer";
 import { useSwipeable } from "react-swipeable";
 
 function MainPage() {
@@ -193,6 +194,7 @@ function MainPage() {
         </motion.section>
       </div>
       <motion.div {...handlers} className="min-h-screen ..."></motion.div>
+      <Footer />
     </motion.div>
   );
 }

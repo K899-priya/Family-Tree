@@ -50,7 +50,7 @@ function MainPage() {
 
       {/* 🎵 Music */}
       <audio ref={audioRef} loop>
-        <source src="/Music.mp3" type="audio/mpeg" />
+        <source src="/Family-Tree/Music.mp3" type="audio/mpeg" />
       </audio>
 
       <button
@@ -63,9 +63,9 @@ function MainPage() {
       {/* 🤖 Anime Section */}
       <div className="flex flex-col items-center text-center relative z-10">
         <motion.img
-          src="/namas.jpg"
+          src="/Family-Tree/namas.jpg"
           alt="anime"
-          className="w-48 mb-4 drop-shadow-[0_0_30px_rgba(255,0,150,0.7)]"
+          className="w-50 mb-4 drop-shadow-[0_0_30px_rgba(255,0,150,0.7)]"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 3 }}
         />

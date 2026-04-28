@@ -49,8 +49,11 @@ function MainPage() {
       <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 bottom-10 right-10 animate-pulse"></div>
 
       {/* 🎵 Music */}
-      <audio ref={audioRef} loop>
-        <source src="/Family-Tree/Music.mp3" type="audio/mpeg" />
+      <audio autoPlay loop>
+        <source
+          src={`${import.meta.env.BASE_URL}Music.mp3`}
+          type="audio/mpeg"
+        />
       </audio>
 
       <button

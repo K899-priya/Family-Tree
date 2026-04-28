@@ -3,18 +3,18 @@
 const familyTree = {
   name: "Grandfather",
   role: "Head",
-  img: "/GF.jpeg",
+  img: "/family-tree/GF.jpeg",
   spouse: {
     name: "Grandmother",
-    img: "/P2133336.JPG",
+    img: "/family-tree/P2133336.JPG",
   },
   children: [
     {
-      name: "Kamla Kant Singh", img: "/s1.jpeg",
-      spouse: { name: "Ramita Devi", img: "/w1.png" },
+      name: "Kamla Kant Singh", img: "/family-tree/s1.jpeg",
+      spouse: { name: "Ramita Devi", img: "/family-tree/w1.png" },
       children: [
-        { name: "Kumari Preeti", img: "/c1.jpeg" },
-        { name: "Kumari Priya", img: "/c2.jpeg" },
+        { name: "Kumari Preeti", img: "/family-tree/c1.jpeg" },
+        { name: "Kumari Priya", img: "/family-tree/c2.jpeg" },
         { name: "Kumari Khushboo", img: "/c3.png" },
       ],
     },

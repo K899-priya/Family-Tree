@@ -1,6 +1,8 @@
 import { motion, useScroll } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { useRef, useState, useEffect } from "react";
+import MemoryCards from "./MemoryCards";
+import Timeline from "./Timeline";
 import FamilyTree from "./FamilyTree";
 import Gallery from "./Gallery";
 import { useSwipeable } from "react-swipeable";
@@ -90,15 +92,67 @@ function MainPage() {
       <div className="mt-16 space-y-20 relative z-10">
         {/* About */}
         <motion.section
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="relative"
         >
-          <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="text-gray-300">
-            We are a loving family full of memories and happiness ❤️
-          </p>
+          {/* 🌟 Glow Background */}
+          <div className="absolute w-96 h-96 bg-pink-500 blur-3xl opacity-20 -z-10 left-1/2 -translate-x-1/2"></div>
+
+          {/* 🧠 Heading */}
+          <h2 className="text-4xl font-extrabold text-center mb-8 bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Our Story 💖
+          </h2>
+
+          {/* 💎 Glass Card */}
+          <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-3xl mx-auto text-center">
+            {/* ✨ Typewriter */}
+            <TypeAnimation
+              sequence={[
+                "We are not just a family...",
+                1500,
+                "We are a bond of love, trust, and memories ❤️",
+                1500,
+                "From laughter to struggles, we grow together 🌱",
+                1500,
+                "Every moment we share becomes a story ✨",
+                1500,
+              ]}
+              wrapper="p"
+              speed={50}
+              repeat={Infinity}
+              className="text-lg text-gray-200"
+            />
+
+            {/* 🧬 Memory Cards */}
+            <MemoryCards />
+
+            {/* 🎞 Timeline */}
+            <Timeline />
+          </div>
+
+          {/* 📊 Stats Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
+            {[
+              { label: "Members", value: "10+" },
+              { label: "Memories", value: "100+" },
+              { label: "Years Together", value: "20+" },
+              { label: "Love", value: "∞ ❤️" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 text-center"
+                whileHover={{ scale: 1.1 }}
+              >
+                <h3 className="text-2xl font-bold text-pink-400">
+                  {item.value}
+                </h3>
+                <p className="text-gray-300 text-sm">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
 
         {/* Members */}

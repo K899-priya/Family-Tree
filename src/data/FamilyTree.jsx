@@ -3,7 +3,7 @@
 const familyTree = {
   name: "Grandfather",
   role: "Head",
-  img: "/gf.JPG",
+  img: "/GF.jpeg",
   spouse: {
     name: "Grandmother",
     img: "/P2133336.JPG",

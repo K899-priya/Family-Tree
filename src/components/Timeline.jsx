@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 
 const timeline = [
   { year: "1972", text: "Our family journey began 💖" },
-  { year: "1998,1992", text: "Welcomed new members Preeti and Gaurav 👶" },
-  { year: "2000", text: "Welcomed new members Abhinav, Amit and Priya 👶" },
-  { year: "2015", text: "Built strong bonds together 🤝" },
+  { year: "1996,1997", text: "Welcomed new members Preeti and Gaurav 👶" },
+  { year: "1999", text: "Welcomed new members Abhinav and Amit 👶" },
+  { year: "2000", text: "Welcomed new member Priya 👶" },
+    { year: "2002", text: "Welcomed new member Khushboo 👶" },
+  { year: "2004", text: "Welcomed new member Shiwani 👶" },
   { year: "2020", text: "Celebrated milestones 🎉" },
   { year: "2025", text: "Still growing with love ❤️" },
 ];
@@ -12,7 +14,6 @@ const timeline = [
 function Timeline() {
   return (
     <div className="relative mt-16 max-w-2xl mx-auto">
-
       {/* Vertical Line */}
       <div className="absolute left-1/2 w-1 bg-pink-500 h-full transform -translate-x-1/2"></div>
 

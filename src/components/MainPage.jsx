@@ -137,9 +137,9 @@ function MainPage() {
           {/* 📊 Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
             {[
-              { label: "Members", value: "10+" },
+              { label: "Members", value: "15+" },
               { label: "Memories", value: "100+" },
-              { label: "Years Together", value: "20+" },
+              { label: "Years Together", value: "30+" },
               { label: "Love", value: "∞ ❤️" },
             ].map((item, i) => (
               <motion.div
@@ -193,7 +193,7 @@ function MainPage() {
           <FamilyTree />
         </motion.section>
       </div>
-      <motion.div {...handlers} className="min-h-screen ..."></motion.div>
+      <motion.div {...handlers} className=" ..."></motion.div>
       <Footer />
     </motion.div>
   );

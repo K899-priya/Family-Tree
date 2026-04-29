@@ -8,6 +8,9 @@ import Gallery from "./Gallery";
 import Footer from "./Footer";
 import { useSwipeable } from "react-swipeable";
 
+// ✅ asset helper
+const getAsset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 function MainPage() {
   const { scrollYProgress } = useScroll();
   const audioRef = useRef(null);
@@ -34,6 +37,7 @@ function MainPage() {
 
   return (
     <motion.div
+      {...handlers}
       className="min-h-screen bg-linear-to-br from-purple-900 via-pink-800 to-black text-white overflow-hidden relative p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -48,12 +52,9 @@ function MainPage() {
       <div className="absolute w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-30 top-10 left-10 animate-pulse"></div>
       <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 bottom-10 right-10 animate-pulse"></div>
 
-      {/* 🎵 Music */}
-      <audio autoPlay loop>
-        <source
-          src={`${import.meta.env.BASE_URL}Music.mp3`}
-          type="audio/mpeg"
-        />
+      {/* 🎵 Music FIXED */}
+      <audio ref={audioRef} loop>
+        <source src={getAsset("Music.mp3")} type="audio/mpeg" />
       </audio>
 
       <button
@@ -66,9 +67,10 @@ function MainPage() {
       {/* 🤖 Anime Section */}
       <div className="flex flex-col items-center text-center relative z-10">
         <motion.img
-          src="/Family-Tree/namas.jpg"
+          src={getAsset("namas.jpg")}
           alt="anime"
-          className="w-50 mb-4 drop-shadow-[0_0_30px_rgba(255,0,150,0.7)]"
+          loading="lazy"
+          className="w-52 mb-4 drop-shadow-[0_0_30px_rgba(255,0,150,0.7)]"
           animate={{ y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 3 }}
         />
@@ -94,6 +96,7 @@ function MainPage() {
 
       {/* 📜 Sections */}
       <div className="mt-16 space-y-20 relative z-10">
+        
         {/* About */}
         <motion.section
           initial={{ opacity: 0, y: 80 }}
@@ -102,42 +105,33 @@ function MainPage() {
           viewport={{ once: true }}
           className="relative"
         >
-          {/* 🌟 Glow Background */}
           <div className="absolute w-96 h-96 bg-pink-500 blur-3xl opacity-20 -z-10 left-1/2 -translate-x-1/2"></div>
 
-          {/* 🧠 Heading */}
           <h2 className="text-4xl font-extrabold text-center mb-8 bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
             Our Story 💖
           </h2>
 
-          {/* 💎 Glass Card */}
           <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-3xl mx-auto text-center">
-            {/* ✨ Typewriter */}
+            
             <TypeAnimation
               sequence={[
                 "We are not just a family...",
                 1500,
-                "We are a bond of love, trust, and memories ❤️",
+                "We are a bond of love ❤️",
                 1500,
-                "From laughter to struggles, we grow together 🌱",
-                1500,
-                "Every moment we share becomes a story ✨",
+                "We grow together 🌱",
                 1500,
               ]}
-              wrapper="p"
               speed={50}
               repeat={Infinity}
               className="text-lg text-gray-200"
             />
 
-            {/* 🧬 Memory Cards */}
             <MemoryCards />
-
-            {/* 🎞 Timeline */}
             <Timeline />
           </div>
 
-          {/* 📊 Stats Section */}
+          {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
             {[
               { label: "Members", value: "15+" },
@@ -159,15 +153,45 @@ function MainPage() {
           </div>
         </motion.section>
 
-        {/* Members */}
+        {/* 👨‍👩‍👧 MEMBERS FIXED */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="max-w-6xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Family Members</h2>
+          <h2 className="text-3xl font-bold mb-10">Family Members</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {["GF.jpeg", "P2133336.JPG", "s1.jpeg", "s2.png"].map((img, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 p-4 rounded-2xl hover:scale-105 transition"
+              >
+                <img
+                  src={getAsset(img)}
+                  loading="lazy"
+                  className="w-24 h-24 rounded-full object-cover border-2 border-pink-400 mb-3"
+                />
+                <p className="text-sm">Member</p>
+              </div>
+            ))}
+          </div>
         </motion.section>
+
+        {/* 🎥 VIDEO SECTION (Drive Ready) */}
+        <section className="text-center mt-20">
+          <h2 className="text-3xl font-bold mb-6">Family Moments 🎥</h2>
+
+          <div className="max-w-4xl mx-auto">
+            <iframe
+              src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+              className="w-full h-100 md:h-125 rounded-2xl shadow-xl"
+              allow="autoplay"
+            ></iframe>
+          </div>
+        </section>
 
         {/* Gallery */}
         <motion.section
@@ -177,7 +201,6 @@ function MainPage() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold mb-6 text-center">Gallery 📸</h2>
-
           <Gallery />
         </motion.section>
 
@@ -192,11 +215,10 @@ function MainPage() {
           <h2 className="text-3xl font-bold text-center mb-10">
             Our Family Tree 🌳
           </h2>
-
           <FamilyTree />
         </motion.section>
       </div>
-      <motion.div {...handlers} className=" ..."></motion.div>
+
       <Footer />
     </motion.div>
   );

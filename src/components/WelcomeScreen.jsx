@@ -1,82 +1,92 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 function WelcomeScreen({ onEnter }) {
-  const [clicked, setClicked] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleEnter = () => {
-    setClicked(true);
+  // ✅ stable particles
+  const particles = useMemo(() => {
+    return [...Array(20)].map(() => ({
+      // eslint-disable-next-line react-hooks/purity
+      top: `${Math.random() * 100}%`,
+      // eslint-disable-next-line react-hooks/purity
+      left: `${Math.random() * 100}%`,
+    }));
+  }, []);
+
+  const handleClick = () => {
+    setOpen(true);
+
     setTimeout(() => {
       onEnter();
-    }, 800);
+    }, 1500);
   };
 
   return (
-    <motion.div
-      onClick={handleEnter}
-      className="h-screen flex flex-col items-center justify-center cursor-pointer overflow-hidden relative text-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+    <div
+      onClick={handleClick}
+      className="h-screen flex items-center justify-center relative overflow-hidden cursor-pointer text-white"
     >
+      {/* 🌌 Background */}
+      <div className="absolute inset-0 bg-linear-to-r from-purple-700 via-pink-600 to-purple-700 animate-[gradient_6s_linear_infinite]" />
 
-      {/* 🌌 Animated Gradient Background */}
-      <div className="absolute inset-0 bg-linear-to-r from-purple-600 via-pink-500 to-purple-600 animate-[gradient_6s_linear_infinite]" />
-
-      {/* ✨ Floating Particles */}
+      {/* ✨ Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(25)].map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 bg-white rounded-full opacity-70 animate-ping"
-            style={{
-              // eslint-disable-next-line react-hooks/purity
-              top: `${Math.random() * 100}%`,
-              // eslint-disable-next-line react-hooks/purity
-              left: `${Math.random() * 100}%`,
-            }}
+            style={{ top: p.top, left: p.left }}
           />
         ))}
       </div>
 
-      {/* 💥 Click Ripple Effect */}
-      {clicked && (
+      {/* ✉️ Envelope Container */}
+      <div className="relative w-80 h-52 z-10">
+
+        {/* 📩 Envelope Body */}
+        <div className="absolute inset-0 bg-white/20 backdrop-blur-lg rounded-xl border border-white/30 shadow-xl" />
+
+        {/* 🔺 Envelope Flap */}
         <motion.div
-          className="absolute w-40 h-40 bg-white rounded-full opacity-20"
-          initial={{ scale: 0 }}
-          animate={{ scale: 10 }}
-          transition={{ duration: 0.8 }}
+          className="absolute top-0 left-0 w-full h-1/2 bg-pink-400 origin-top rounded-t-xl"
+          initial={{ rotateX: 0 }}
+          animate={{ rotateX: open ? -180 : 0 }}
+          transition={{ duration: 1 }}
+          style={{ transformOrigin: "top" }}
         />
+
+        {/* 📜 Letter */}
+        <motion.div
+          className="absolute left-1/2 -translate-x-1/2 w-[90%] h-[80%] bg-white text-black rounded-lg shadow-lg flex flex-col items-center justify-center text-center px-4"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{
+            y: open ? -120 : 30,
+            opacity: open ? 1 : 0,
+          }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <h2 className="text-xl font-bold mb-2">
+            Welcome 💖
+          </h2>
+          <p className="text-sm">
+            Our family story begins here ✨
+          </p>
+        </motion.div>
+
+      </div>
+
+      {/* 👇 Hint */}
+      {!open && (
+        <motion.p
+          className="absolute bottom-10 text-white/80"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          Tap to open ✉️
+        </motion.p>
       )}
-
-      {/* 🧠 Title */}
-      <motion.h1
-        className="text-5xl md:text-6xl font-extrabold text-center z-10"
-        initial={{ scale: 0.6, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        Welcome to Our Family 💖
-      </motion.h1>
-
-      {/* ✨ Subtitle */}
-      <motion.p
-        className="mt-6 text-lg z-10 text-white/90"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        Click karne ka 👆
-      </motion.p>
-
-      {/* 🔽 Bounce Hint */}
-      <motion.div
-        className="absolute bottom-10 text-white/80 text-2xl"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        ↓
-      </motion.div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -24,13 +24,13 @@ function WelcomeScreen({ onEnter }) {
         {/* 📩 Letter (comes out in 3D) */}
         <motion.div
           className="absolute inset-0 bg-linear-to-br from-pink-500 to-purple-600 rounded-2xl shadow-2xl flex flex-col items-center justify-center text-center px-6"
-          initial={{ y: 40, rotateX: 20, opacity: 0 }}
+          initial={{ y: 40, rotateX: 10, opacity: 0 }}
           animate={{
             y: open ? -140 : 40,
-            rotateX: open ? 0 : 20,
+            rotateX: open ? 0 : 10,
             opacity: open ? 1 : 0,
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2}}
           style={{ transformStyle: "preserve-3d" }}
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
@@ -40,27 +40,14 @@ function WelcomeScreen({ onEnter }) {
             A place where memories come alive ✨
           </p>
         </motion.div>
-
-        {/* 🔺 TOP FLAP (3D rotate) */}
-        <motion.div
-          className="absolute top-0 left-0 w-full h-1/2 bg-purple-800 rounded-t-2xl shadow-xl"
-          animate={{
-            rotateX: open ? -170 : 0,
-          }}
-          transition={{ duration: 1 }}
-          style={{
-            transformOrigin: "top",
-            transformStyle: "preserve-3d",
-          }}
-        />
-
-        {/* ◀️ LEFT FLAP */}
-        <motion.div
+        
+          {/* ◀️ LEFT FLAP */}
+         <motion.div
           className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-purple-900 clip-left shadow-lg"
           animate={{
             rotateY: open ? -20 : 0,
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           style={{ transformOrigin: "left" }}
         />
 
@@ -70,9 +57,23 @@ function WelcomeScreen({ onEnter }) {
           animate={{
             rotateY: open ? 20 : 0,
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           style={{ transformOrigin: "right" }}
         />
+
+        {/* 🔺 TOP FLAP (3D rotate) */}
+        <motion.div
+          className="absolute top-0 left-0 w-full h-1/2 bg-purple-800 rounded-t-2xl shadow-xl"
+          animate={{
+            rotateX: open ? -160 : 9,
+          }}
+          transition={{ duration: 2 }}
+          style={{
+            transformOrigin: "top",
+            transformStyle: "preserve-3d",
+          }}
+        />
+       
 
         {/* 📦 Base shadow */}
         <div className="absolute inset-0 bg-black/30 rounded-2xl blur-xl -z-10 translate-y-6"></div>

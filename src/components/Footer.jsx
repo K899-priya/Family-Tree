@@ -9,7 +9,7 @@ function Footer() {
       className="relative mt-20 text-white"
     >
       {/* 🌌 Glow */}
-      <div className="absolute w-72 h-72 bg-pink-500 blur-3xl opacity-20 bottom-0 left-10"></div>
+      <div className="absolute w-72 h-70 bg-pink-500 blur-3xl opacity-20 bottom-0 left-10"></div>
 
       <div className="relative backdrop-blur-lg bg-white/10 border-t border-white/20 px-6 py-10">
 
@@ -25,13 +25,13 @@ function Footer() {
           <div>
             <h2 className="text-xl font-bold mb-3">Location 📍</h2>
             <p className="text-gray-300 text-sm">
-              Patratoli, Lohardaga, Jharkhand, India 🇮🇳
+              Kamala Flour Mill, Patratoli, Lohardaga, Jharkhand, India 🇮🇳
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-bold mb-3">Contact 📞</h2>
-            <p className="text-gray-300 text-sm">family@email.com</p>
+            <p className="text-gray-300 text-sm">familya2k4s@email.com</p>
           </div>
 
         </div>

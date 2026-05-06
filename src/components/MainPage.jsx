@@ -96,7 +96,6 @@ function MainPage() {
 
       {/* 📜 Sections */}
       <div className="mt-16 space-y-20 relative z-10">
-        
         {/* About */}
         <motion.section
           initial={{ opacity: 0, y: 80 }}
@@ -112,7 +111,6 @@ function MainPage() {
           </h2>
 
           <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-3xl mx-auto text-center">
-            
             <TypeAnimation
               sequence={[
                 "We are not just a family...",
@@ -186,9 +184,8 @@ function MainPage() {
 
           <div className="max-w-4xl mx-auto">
             <iframe
-              src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
-              className="w-full h-100 md:h-125 rounded-2xl shadow-xl"
-              allow="autoplay"
+              src="https://drive.google.com/embeddedfolderview?id=1CxJex6CD5uqxVUMdQDMv1Sogip8rUu12#grid"
+              className="w-full h-125 md:h-175 rounded-2xl border-4 shadow-2xl "
             ></iframe>
           </div>
         </section>

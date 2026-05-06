@@ -24,13 +24,13 @@ function WelcomeScreen({ onEnter }) {
         {/* 📩 Letter (comes out in 3D) */}
         <motion.div
           className="absolute inset-0 bg-linear-to-br from-pink-500 to-purple-600 rounded-2xl shadow-2xl flex flex-col items-center justify-center text-center px-6"
-          initial={{ y: 40, rotateX: 10, opacity: 0 }}
+          initial={{ y: 15, rotateX: 10, opacity: 0 }}
           animate={{
-            y: open ? -140 : 40,
+            y: open ? -90 : 15,
             rotateX: open ? 0 : 10,
-            opacity: open ? 1 : 0,
+            opacity: open ? 5 : 0,
           }}
-          transition={{ duration: 2}}
+          transition={{ duration: 3 }}
           style={{ transformStyle: "preserve-3d" }}
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
@@ -84,7 +84,7 @@ function WelcomeScreen({ onEnter }) {
         <motion.div
           className="absolute bottom-10 text-white/80"
           animate={{ y: [0, 15, 0] }}
-          transition={{ repeat: Infinity, duration: 5.5 }}
+          transition={{ repeat: Infinity, duration: 10 }}
         >
           Tap to open ✉️
         </motion.div>

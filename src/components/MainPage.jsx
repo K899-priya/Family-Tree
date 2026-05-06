@@ -159,10 +159,10 @@ function MainPage() {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold mb-10">Family Members</h2>
+          <h2 className="text-3xl font-bold mb-8">Family Members</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {["GF.jpeg", "P2133336.JPG", "s1.jpeg", "s2.png"].map((img, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+            {["GF.jpeg", "P2133336.JPG", "s1.jpeg", "s2.png", "s3.png"].map((img, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 p-4 rounded-2xl hover:scale-105 transition"
@@ -180,12 +180,12 @@ function MainPage() {
 
         {/* 🎥 VIDEO SECTION (Drive Ready) */}
         <section className="text-center mt-20">
-          <h2 className="text-3xl font-bold mb-6">Family Moments 🎥</h2>
+          <h2 className="text-3xl font-bold mb-6">Family Moments 🎥</h2><br />
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <iframe
               src="https://drive.google.com/embeddedfolderview?id=1CxJex6CD5uqxVUMdQDMv1Sogip8rUu12#grid"
-              className="w-full h-125 md:h-175 rounded-2xl border-4 shadow-2xl "
+              className="w-full h-125 md:h-170 "
             ></iframe>
           </div>
         </section>

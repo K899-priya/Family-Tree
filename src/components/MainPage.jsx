@@ -4,6 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import MemoryCards from "./MemoryCards";
 import Timeline from "./Timeline";
 import FamilyTree from "./FamilyTree";
+import UploadMedia from "./UploadMedia";
+import RealtimeGallery from "./RealtimeGallery";
 import Gallery from "./Gallery";
 import Footer from "./Footer";
 import { useSwipeable } from "react-swipeable";
@@ -162,33 +164,30 @@ function MainPage() {
           <h2 className="text-3xl font-bold mb-8">Family Members</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-            {["GF.jpeg", "P2133336.JPG", "s1.jpeg", "s2.png", "s3.png"].map((img, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 p-4 rounded-2xl hover:scale-105 transition"
-              >
-                <img
-                  src={getAsset(img)}
-                  loading="lazy"
-                  className="w-24 h-24 rounded-full object-cover border-2 border-pink-400 mb-3"
-                />
-                <p className="text-sm">Member</p>
-              </div>
-            ))}
+            {["GF.jpeg", "P2133336.JPG", "s1.jpeg", "s2.png", "s3.png"].map(
+              (img, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 p-4 rounded-2xl hover:scale-105 transition"
+                >
+                  <img
+                    src={getAsset(img)}
+                    loading="lazy"
+                    className="w-24 h-24 rounded-full object-cover border-2 border-pink-400 mb-3"
+                  />
+                  <p className="text-sm">Member</p>
+                </div>
+              ),
+            )}
           </div>
         </motion.section>
 
         {/* 🎥 VIDEO SECTION (Drive Ready) */}
         <section className="text-center mt-20">
-          <h2 className="text-3xl font-bold mb-6">Family Moments 🎥</h2><br />
+          <h2 className="text-3xl font-bold mb-6">Family Moments 🎥</h2>
+          <br />
 
-          <div className="max-w-3xl mx-auto">
-            <iframe
-              src="https://drive.google.com/embeddedfolderview?id=1CxJex6CD5uqxVUMdQDMv1Sogip8rUu12#grid"
-              className="w-full h-115 md:h-170 "
-              className="w-full h-125 md:h-160 "
-            ></iframe>
-          </div>
+          <UploadMedia />
         </section>
 
         {/* Gallery */}
@@ -200,6 +199,7 @@ function MainPage() {
         >
           <h2 className="text-3xl font-bold mb-6 text-center">Gallery 📸</h2>
           <Gallery />
+          <RealtimeGallery />
         </motion.section>
 
         {/* 🌳 Tree */}

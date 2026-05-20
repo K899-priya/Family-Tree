@@ -185,7 +185,7 @@ function MainPage() {
           <div className="max-w-3xl mx-auto">
             <iframe
               src="https://drive.google.com/embeddedfolderview?id=1CxJex6CD5uqxVUMdQDMv1Sogip8rUu12#grid"
-              className="w-full h-125 md:h-170 "
+              className="w-full h-115 md:h-170 "
             ></iframe>
           </div>
         </section>
